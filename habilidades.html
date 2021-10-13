@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certamen número 2</title>
+    <!--framework de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <!----CSS------>   
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" >
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Clientes</h1> <!--cabecera--> 
+            <form>
+                <!--Nombre completo--> 
+                <div>
+                    <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+                    <input pattern="[Aa-Zz]" minlength="10" type="text" class="form-control" id="nombreCompleto" required>
+                    <div class="valid-feedback">
+                    Bien!
+                    </div>
+                </div>
+                <br/>
+                <!--Edad-->
+                <div>
+                    <label for="edad" class="form-label">Edad</label>
+                    <input type="number" class="form-control" id="edad" max="100" min="18" required>
+                    <div class="valid-feedback">
+                    Bien!
+                    </div>
+                </div>
+                <br/>
+                <!--Genero-->
+                <p>Género</p>
+                <div>
+                    <input type="radio" class="form-check-input" id="sexo" name="radio-stacked" required>
+                    <label class="form-check-label" for="sexo">Masculino</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="sexo" name="radio-stacked" required>
+                    <label class="form-check-label" for="sexo">Femenino</label>
+                    <div class="invalid-feedback">Debe escoger uno de ambos sexos.</div>
+                </div>
+                <br/>
+                <!--Fecha de nacimiento-->
+                <div>
+                    <label  for="calendario">Fecha de nacimiento</label>
+                    <input type="date" id="calendario" class="form-control" required>
+                    <div class="invalid-feedback">Debe colocar su fecha de nacimiento</div>
+                </div>
+                <br/>
+                <div>
+                    <label for="comuna" class="form-label">Comuna</label><br>    
+                </div>
+                <div>
+                    <select class="form-control" id="region" size="1" onchange="mostrarComunaRegion(this.value)" required>
+                        <option value="" disabled selected>Seleccione region</option>
+                        <option>Valparaíso</option>
+                        <br/>
+                        <option>Coquimbo</option>
+                        <div class="invalid-feedback">
+                            Selecciona una opción válida.
+                        </div>
+                    </select>
+                    <select id="comuna" size="1" class="form-control">
+                        <option value="" disabled selected>Seleccione comuna</option>
+                        <option></option><!--No hay nada que mostrar-->
+                    </select>
+                        <div class="invalid-feedback">
+                            Selecciona una opción válida.
+                        </div>
+                </div>    
+                <br/>
+                <div>
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" required>
+                    <div class="valid-feedback">
+                    Bien!
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="col">
+                    <label for="telefono" class="form-label">Télefono</label>
+                    <input maxlength="9" type="tel" class="form-control" id="telefono" pattern="[0-9]{9}"  required>
+                    <div class="valid-feedback">
+                      Télefono
+                    </div>
+                <br/>
+                <div class="col">
+                    <label for="observaciones" class="form-label">Observaciones</label>
+                    <textarea class="form-control" id="observaciones" rows="3" required></textarea>
+                    <div class="valid-feedback"> 
+                    </div>
+
+                    <div class="invalid-feedback"> 
+                    </div>
+
+                  </div>
+                <br/>
+                <label for="">Habilidades</label>
+                <input type="text">
+                <button class="btn btn-primary" type="button">Eléctronica</button>
+                <button class="btn btn-primary" type="button">Programación</button>
+                <button class="btn btn-primary" type="button">Mécanica</button>
+                <button src="habilidades.html" class="btn btn-primary" type="button">Otro</button>
+                <input type="text" style="border: color black;">
+                <button> <a href="index.html" type="button"> Ingresar habilidad </a></button>
+                <br/>
+                <button>Crear</button>
+                <button type="reset">Limpiar</button>
+
+                <br/>
+            </form>
+        <script data-main="js/typescript.js" src="js/require-jquery.js"></script>
+    </div>
+
+    
+</body>
+</html>
